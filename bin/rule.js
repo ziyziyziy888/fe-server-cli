@@ -6,7 +6,7 @@ require('shelljs-plugin-open');
 var currentPath = process.cwd();
 
 function create() {
-  shell.cp('-Rf', currentPath + '/node_modules/@mc/fe-server/template/*', '.');
+  shell.cp('-Rf', currentPath + '/node_modules/@mc/fe-server/template', './service');
   console.log('\n----------> mc-server 初始化成功\n'.green);
     // 暂时没有分库，引用路径区分
   console.log('\n----------> 请手动修改MCServer引用路径\n'.yellow);

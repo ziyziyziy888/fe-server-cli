@@ -40,6 +40,8 @@ npm --registry=https://registrymnpm.stage.yunshanmeicai.com install @alicloud/ag
 
 init 之后将会产生项目生产所需要的必要文件及项目结构，大部分的框架设计由***fe-server***接管，用户的开发精力集中在router、controller、config配置。
 
+server项目和api项目用统一模版，但是在实际业务开发中以功能区分。
+
 ## TODO
 
 * init 安全验证
