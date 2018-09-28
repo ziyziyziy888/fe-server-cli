@@ -1,6 +1,6 @@
 {
   "name": "@mc/fe-server-cli",
-  "version": "0.0.9",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -15,7 +15,8 @@
     "@mc/fe-server": "0.0.9",
     "colors": "^1.3.2",
     "commander": "^2.18.0",
-    "shelljs": "^0.8.2"
+    "shelljs": "^0.8.2",
+    "shelljs-plugin-open": "^0.2.0"
   },
   "devDependencies": {}
 }

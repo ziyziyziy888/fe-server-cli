@@ -1,6 +1,7 @@
 var shell = require('shelljs');
 var colors = require('colors');
 var path = require('path');
+require('shelljs-plugin-open');
 
 var currentPath = process.cwd();
 
@@ -18,6 +19,23 @@ function install() {
   }
 }
 
+function help() {
+  shell.open('https://mnpm.stage.yunshanmeicai.com/package/@mc/fe-server-cli');
+}
+
+function run(options) {
+  var deployEnv = options.deploy ? options.deploy : 'dev';
+  var nodeEnv = options.node ? options.node : 'test';
+
+  if (deployEnv === 'prod') {
+    shell.exec(`export NODE_ENV=${nodeEnv} && pm2 start pm2.json`, { silent: false });
+  
+  } else {
+    shell.exec(`export NODE_ENV=${nodeEnv} && nodemon server/index.js`, { silent: false });
+  
+  }
+}
+
 module.exports = {
-  create, install
+  create, install, help, run
 };

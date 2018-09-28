@@ -24,4 +24,20 @@ program
   });
 
 program
+  .command('help')
+  .description('操作指南')
+  .action((options) => {
+    rule.help();
+  })
+
+program
+  .command('run')
+  .description('项目运行')
+  .option('-D, --deploy [value]', '修改deploy状态，dev or prod')
+  .option('-N, --node [value]', '修改环境状态，test or stage or production')
+  .action((options) => {
+    rule.run(options);
+  })
+
+program
   .parse(process.argv);
