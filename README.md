@@ -17,12 +17,34 @@ mc-server-cli run -D dev -N test        // 开启开发模式、环境test
 ## for Deploy
 
 ```
-mc-server-cli run -D prod -N production // 开启线上模式、环境production
+// 环境设置
+./deploy.sh
 
-./deploy.sh                             // 部署模式
+启动服务
+mc-server-cli run -D prod -N production // 开启线上模式、环境production
+or
+export NODE_ENV=production
+pm2 start config/pm2.json
+
+// 监控安装(移动到deploy)
+wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash
+source ~/.bashrc
+tnvm install alinode-v3.11.4
+tnvm use alinode-v3.11.4
+npm --registry=https://registrymnpm.stage.yunshanmeicai.com install @alicloud/agenthub -g
+
 
 ```
 
 ## 释意
 
 init 之后将会产生项目生产所需要的必要文件及项目结构，大部分的框架设计由***fe-server***接管，用户的开发精力集中在router、controller、config配置。
+
+## TODO
+
+* init 安全验证
+* init 特殊文件初始化
+
+## 参考
+
+https://help.aliyun.com/document_detail/60338.html?spm=a2c4g.11174283.3.1.119930b1YYWSLR
