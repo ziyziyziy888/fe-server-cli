@@ -33,7 +33,7 @@ function run(options) {
     shell.exec(`export NODE_ENV=${nodeEnv} && pm2 start config/pm2.json`, { silent: false });
   
   } else {
-    shell.exec(`export NODE_ENV=${nodeEnv} && nodemon server/index.js`, { silent: false });
+    shell.exec(`export NODE_ENV=${nodeEnv} && nodemon index.js`, { silent: false });
   
   }
 }
